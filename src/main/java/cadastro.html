@@ -1,0 +1,67 @@
+<html>
+<title>
+Cadastro
+</title>
+
+<body>
+
+<script>
+
+function salvar(){
+	var nome = document.getElementById("nome").value ;
+	var cpf = document.getElementById("endereco").value;
+	
+	var error = "";
+	document.getElementById("resultado").innerHTML = "";
+	
+	if(nome == ""){
+		error = "Preencha o campo nome";		
+	}
+	else if(cpf == ""){
+		error = "Preencha o campo endereco";		
+	}
+	
+	if(error == ""){
+		alert("Cadastro realizado com sucesso");
+		limpaTela();
+	}else{	
+		document.getElementById("resultado").innerHTML =  error;
+	}
+}
+
+function limpaTela(){
+	document.getElementById("nome").value = "";
+	var cpf = document.getElementById("endereco").value = "";
+	
+	
+}
+
+</script>
+
+<h2>Cadastro Pessoa</h2>
+
+
+<table>
+<tr>
+	<td>Nome: </td>
+	<td> <input type="text" id="nome" > </td>
+</tr>
+<tr>
+	<td>CPF: </td>
+	<td> <input type="text" id="cpf"><br> </td>
+</tr>
+<tr>
+
+</table>
+
+<button onclick="salvar()" id="btn_salvar">salvar</button>
+
+<br>
+<br>
+
+<div id="resultado"></div>
+
+</body>
+
+
+</html>
